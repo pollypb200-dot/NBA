@@ -1,0 +1,7 @@
+pandas
+scikit-learn
+xgboost
+nba_api
+# tkinter is part of Python's standard library, not a pip package.
+# On Ubuntu / GitHub Codespaces, if you get "No module named 'tkinter'",
+# install it with: sudo apt-get update && sudo apt-get install -y python3-tk
