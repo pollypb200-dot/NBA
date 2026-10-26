@@ -4,3 +4,8 @@ If you can see this file in VS Code / on your local computer, the GitHub sync is
 
 Pushed as a test on 2026-10-26 at 09:20 PST by Anon.
 You can delete this file later — it does not affect main.py.
+
+## Test 2 — one more
+
+If you can see this line, the second sync worked too.
+Pushed as Test 2 on 2026-10-26 at 09:21 PST by Anon.
