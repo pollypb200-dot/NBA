@@ -9,3 +9,8 @@ You can delete this file later — it does not affect main.py.
 
 If you can see this line, the second sync worked too.
 Pushed as Test 2 on 2026-10-26 at 09:21 PST by Anon.
+
+## Test 3 — CHANGE 1 (live test)
+
+If you can see this line, Change 1 arrived live.
+Pushed as Change 1 on 2026-10-26 at about 09:29 PST by Anon.
