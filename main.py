@@ -86,6 +86,16 @@ def train_model():
 
 
 # --- GUI Application Logic ---
+def parse_rest_days(value):
+    """Parse a rest-days selection into a number.
+
+    Accepts plain numbers ("0".."7") and legacy "4+" style values.
+    Training caps rest days at 7, so clamp to the same 0-7 range.
+    """
+    cleaned = str(value).strip().rstrip("+")
+    return min(max(float(cleaned), 0), 7)
+
+
 def make_prediction():
     if model is None:
         messagebox.showerror("Error", "Model is still training.")
@@ -104,8 +114,8 @@ def make_prediction():
         home_last = 1 if home_form_var.get() == "Win" else 0
         away_last = 1 if away_form_var.get() == "Win" else 0
 
-        home_rest = float(home_rest_var.get())
-        away_rest = float(away_rest_var.get())
+        home_rest = parse_rest_days(home_rest_var.get())
+        away_rest = parse_rest_days(away_rest_var.get())
 
         home_id_enc = le.transform([team_abbr_to_id[home_abbr]])[0]
         away_id_enc = le.transform([team_abbr_to_id[away_abbr]])[0]
@@ -168,7 +178,7 @@ ttk.Combobox(root, textvariable=home_form_var, values=["Win", "Loss"], state="re
 
 tk.Label(root, text="Home Rest Days (0 for B2B):").grid(row=6, column=0, sticky="w")
 home_rest_var = tk.StringVar(value="1")
-ttk.Combobox(root, textvariable=home_rest_var, values=["0", "1", "2", "3", "4+"], state="readonly", width=12).grid(
+ttk.Combobox(root, textvariable=home_rest_var, values=["0", "1", "2", "3", "4", "5", "6", "7"], state="readonly", width=12).grid(
     row=7, column=0, sticky="w")
 
 # --- AWAY TEAM UI ---
@@ -190,7 +200,7 @@ ttk.Combobox(root, textvariable=away_form_var, values=["Win", "Loss"], state="re
 
 tk.Label(root, text="Away Rest Days (0 for B2B):").grid(row=6, column=1, sticky="w")
 away_rest_var = tk.StringVar(value="1")
-ttk.Combobox(root, textvariable=away_rest_var, values=["0", "1", "2", "3", "4+"], state="readonly", width=12).grid(
+ttk.Combobox(root, textvariable=away_rest_var, values=["0", "1", "2", "3", "4", "5", "6", "7"], state="readonly", width=12).grid(
     row=7, column=1, sticky="w")
 
 # --- PREDICT BUTTON & RESULTS ---
