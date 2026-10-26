@@ -14,3 +14,8 @@ Pushed as Test 2 on 2026-10-26 at 09:21 PST by Anon.
 
 If you can see this line, Change 1 arrived live.
 Pushed as Change 1 on 2026-10-26 at about 09:29 PST by Anon.
+
+## Test 4 — CHANGE 2 (live test, different time)
+
+If you can see this line, Change 2 arrived live, separately from Change 1.
+Pushed as Change 2 on 2026-10-26 at about 09:31 PST by Anon.
